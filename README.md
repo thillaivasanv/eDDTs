@@ -58,12 +58,22 @@ The following device test cases are available
 
 Device | Test Case |
 | --- | --- |
-| `DS2321-RTC` | 1.Read RTC Time |     
+| DS2321-RTC   | 1.Read RTC Time |     
 |              | 2.Compare RTC time & system time |
 |              | 3.Checks for Alarms |
-| 'TMP101-TEMP SENSOR' | 1.Read Temperature |
-| 'I2C PROBE' | 1.Scans I2C Bus for connected slaves |
-
+| TMP101-TEMP SENSOR | Read Temperature value |
+| I2C PROBE | Scans I2C Bus for connected slaves |
+| AT243C2-EEPROM | Verifies Data Integrity by writing and reading to the EEPROM |
+| W25Q32-SERIAL FLASH | 1. Performs Erase,Write and Read
+|                     | 2. Verifies Data Integrity
+| SPI | Verifies SoC SPI interface by loopback transmit & recieve |
+| AUDIO | 1.Plays Sine tone using also utilities
+|       | 2.Plays Wave file using alsa utilities
+| ETHERNET | 1.Interface Link
+|          | 2.IP Address Connectivity
+           | 3.Speed & duplex test
+|          | 4.Auto negotiate test
+ 
 # Platform Under Tests Supported #
 
 =================================================================
