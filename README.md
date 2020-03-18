@@ -35,7 +35,7 @@ The main additions or 'enhacements' of eDDTs compared to LTP are
 * Easy to support new platforms
 * High Code Reuse across platforms
 
-# Test Suites #
+# Test Suites Details #
 
 ================================================================
 
@@ -55,6 +55,14 @@ The following device test cases are available
 * Watchdog
 * Basic USB Test
 * Number of CPU core
+
+|     Device     | Test Case Details    |
+| -------------  | -----------------    |
+| RTC            | Read RTC time        |
+|                | Compare RTC time &   |
+|                | System Time          |
+|                | Check for Alarms     |
+|    
 
 # Platform Under Tests Supported #
 
