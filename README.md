@@ -41,21 +41,6 @@ The main additions or 'enhacements' of eDDTs compared to LTP are
 
 The following device test cases are available 
 
-* RTC (DS3231)
-* Temperature Sensor (TMP101)
-* EEPROM (AT243C2 )
-* SPI NOR FLASH
-* Direct Memory Access (DMA)
-* eMMC
-* Audio Playback & Speaker Test
-* Ethernet - Speed , autonegotiate , full duplex , Connectivity
-* I2C Probe
-* SPIDEV
-* GPIO - SYSFS
-* Watchdog
-* Basic USB Test
-* Number of CPU core
-
 Device | Test Case |
 | --- | --- |
 | DS2321-RTC   | 1.Read RTC Time |     
@@ -69,11 +54,17 @@ Device | Test Case |
 | SPI | Verifies SoC SPI interface by loopback transmit & recieve |
 | AUDIO | 1.Plays Sine tone using also utilities
 |       | 2.Plays Wave file using alsa utilities
-| ETHERNET | 1.Interface Link
-|          | 2.IP Address Connectivity
-           | 3.Speed & duplex test
-|          | 4.Auto negotiate test
- 
+| ETHERNET | 1.Interface Link |
+|          | 2.IP Address Connectivity |
+           | 3.Speed & duplex test |
+|          | 4.Auto negotiate test |
+| GPIO | 1.Test GPIO Output |
+|      | 2.Test GPIO Input |
+| USB  | Checks whether a USB device connectivity |
+| CPU Core | Checks available number of cores present in SoC |
+| DMA | Performs memory-to-memory transfer test using a DMA Channel |
+| Watchdog | Performs SoC Watchdog timeout configuration & watchdog Refresh |
+
 # Platform Under Tests Supported #
 
 =================================================================
