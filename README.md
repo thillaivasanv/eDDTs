@@ -58,9 +58,11 @@ The following device test cases are available
 
 Device | Test Case |
 | --- | --- |
-| `DS2321-RTC` | '1.Read RTC Time' |     
-|              | '2.Compare RTC time & system time' |
-|              | '3.Checks for Alarms' |
+| `DS2321-RTC` | 1.Read RTC Time |     
+|              | 2.Compare RTC time & system time |
+|              | 3.Checks for Alarms |
+| 'TMP101-TEMP SENSOR' | 1.Read Temperature |
+| 'I2C PROBE' | 1.Scans I2C Bus for connected slaves |
 
 # Platform Under Tests Supported #
 
