@@ -56,13 +56,11 @@ The following device test cases are available
 * Basic USB Test
 * Number of CPU core
 
-|     Device     | Test Case Details    |
-| -------------  | -----------------    |
-| RTC            | Read RTC time        |
-|                | Compare RTC time &   |
-|                | System Time          |
-|                | Check for Alarms     |
-|    
+Device | Test Case |
+| --- | --- |
+| `DS2321-RTC` | * Read RTC Time |     
+                 * Compare RTC time & system time |
+                 * Checks for Alarms |
 
 # Platform Under Tests Supported #
 
