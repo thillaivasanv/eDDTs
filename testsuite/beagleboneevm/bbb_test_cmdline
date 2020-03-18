@@ -1,0 +1,15 @@
+#Tag       		Test case
+#---------------------------------------
+i2c_test 		beaglebone-evm/i2c_test /dev/i2c-1 0x48
+temp_sensor_test 	beaglebone-evm/temp_sensor_test /dev/i2c-1 0x48
+rtc_test 		beaglebone-evm/rtc_test /dev/rtc0
+gpio_test 		beaglebone-evm/gpio_test 4 1 5
+gpio_test 		beaglebone-evm/gpio_test 24 0 7
+wdt_test 		beaglebone-evm/wdt_test /dev/watchdog
+spidev_test 		beaglebone-evm/spidev_test /dev/spidev1.0
+usb_test 		beaglebone-evm/usb_test
+cpu_core_test 		beaglebone-evm/cpu_core_test
+eth_test		beaglebone-evm/eth_test
+norflash_test 		beaglebone-evm/norflash_test
+eeprom_test		beaglebone-evm/eeprom_test
+#----------------------------------------

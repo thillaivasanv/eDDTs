@@ -1,0 +1,157 @@
+Embedded Device Driver Test Suite
+================================================================================
+
+1) OBJECTIVE:
+================================================================================
+ * Validate various  device driver functionality on embedded Linux systems.
+ * Maximize use of open source software and contribute to improve it.
+ * Maximize code reuse across different platforms.
+ * Make it easy to support new embedded platforms.
+
+2) FRAMEWORK ARCHITECTURE:
+================================================================================
+ * Based on LTP http://ltp.sourceforge.net/
+ * Support filtering of test cases based on platform
+
+3) HOW TO ADD NEW DEVICE DRIVER TESTS CASES TO EXISTING PLATFORMS:
+================================================================================
+ You only need to add files to either of two platform directories:
+ eDDTs/testsuite/beagleboneevm/: Contains the test cases for BEAGLE BONE BLACK evaluation board
+ eDDTs/testsuite/rpi2evm/  : Contains the test cases for RPI2 evaluation board.
+ 
+ * create following directory for a new test case in beagleboneevm  
+   eDDTs/testsuite/beagleboneevm/<your sources dir name>/
+   Add your c sources to the directory created above and make sure that you have
+   a top level Makefile. Check Makefile of existing directories for examples
+   ADD new directory entry in the top level makefile in SUBDIRS
+
+4) eDDTS IMPLEMENTATION GUIDELINES
+================================================================================
+ * Write you test code using c.
+ * Follow LTP API's to communicate with the device driver
+ * Avoid hard-coding values that are specific to your platform, instead try to 
+   determine the right value to use using using sys and proc interfaces
+ * Use TEST SCENARIOS and command line interfaces to write test cases
+ 	Follow LTP guidelines. The test scenario file is basically made of one or 
+   	more test step lines. Each test step line have following format
+   	<TAG> <COMMANDS>, where
+   		TAG is a string that identifies the test step.
+     		Use following convention to named TAGs so that the test cases can be 
+     		selectively run based on AREA, SCOPE and/or TYPE.  
+     		<AREA>_<SCOPE>_<TYPE>_<OPT_ID>,
+   		COMMANDS is a list of one or more shell commands separated by semicolon (;),
+     		the test step will pass if the commands return zero, otherwise it fails.
+
+5) HOW TO ADD NEW PLATFORMS
+================================================================================
+ You only need to create a new folder for the corresponding platform:
+
+ * create following directory for a new platform
+   eDDTs/testsuite/<your platform dir name evm>/
+   Add your c sources to the directory created above and make sure that you have
+   a top level Makefile. Check Makefile of existing directories for examples
+   ADD new directory entry in the top level makefile in SUBDIRS 
+
+ * Define a MACRO for the new platform name in LTP top level makefile
+   	For e.g
+	ifeq ($(BBB),1)
+		COMMON_TARGETS          += ../testsuite/beagleboneevm
+	else ifeq ($(RPI2),1)
+		COMMON_TARGETS          += ../testsuite/rpi2evm
+	endif
+
+ * You might need to define new override values for your new platform in some
+   test case files. A reasonable strategy is to try to run an existing test plan 
+   and then analyze the test failures to determine probable test cases where you 
+   need to define override values.  
+ * Add a runtest scenario file for each platform.Check the scenario file of
+   existing platforms.
+
+6) Building eDDTs
+================================================================================
+
+6.1) Environment Setup for eDDTs build
+================================================================================
+ In order to cross compile eDDTs, a cross-compiler tool-chain is required.
+ Use either Linaro Toolchain or toolchain suggested for the platform used.
+ 
+ Set the environment variable PATH to contain the binaries of the toolchain cross-compiler tool-chain.
+     For example, in bash: 
+	     $ export PATH=/opt/toolchainpath/bin:$PATH 
+ Test if PATH is set properly by running following command 
+  * For Linaro Toolchain
+    $ arm-linux-gnueabihf-gcc -v
+
+6.2) HOW TO CROSS-COMPILE AND INSTALL
+================================================================================
+ Note: CROSS_COMPILE may be set differently than the examples showing in this section.
+   for Linaro Toolchain: CROSS_COMPILE=arm-linux-gnueabihf-
+
+ * cd to eDDTs directory do
+   $ Ensure cross compiler path is exported as stated above
+   $ make autotools
+   $ ./configure --host=CROSS-COMPILER-HOST CC=CROSS-COMPILER-GCC --prefix= INSTALLATION-PATH
+   $ make PLATFORM=1
+	PLATFORM is name of the platform for which the drivers need to build
+	for e.g for Beagle bone black platform
+		make BBB=1
+   	for e.g for RPI2 platform
+		make RPI2=1
+   $ make install PLATFORM=1
+	PLATFORM is name of the platform for which the drivers need to build
+        for e.g for Beagle bone black platform
+                make BBB=1
+        for e.g for RPI2 platform
+                make RPI2=1
+ * The installation also copies the runtest scenario file to the runtest directory
+ * Now copy the installed driver binaries to the target platform 
+ * Use the same procedure for clean and distclean
+	for e.g for Beagle bone black platform
+                make clean BBB=1
+		make distclean BBB=1
+        for e.g for RPI2 platform
+                make clean RPI2=1
+		make distclean RPI2=1
+	
+
+7) HOW TO RUN TESTS
+================================================================================
+ * Run eDDTs tests the same way you run LTP tests. Use ltprun program and pass to
+   it the test scenario file in the runtest directory. For example
+
+	./runltp -f bbb_test_cmdline
+
+ * In addition to selecting test scenarios using -f option, users can also 
+   filter test cases using -s PATTERN and -S SKIPFILE options. These options
+   select or skip test cases based on the test case TAG specified in the test
+   scenario file.
+ * The runltp script have lot of options. Some useful ones for stress tests are:
+   -t DURATION: Define duration of the test in s,m,h,d.
+   -x INSTANCES: Run multiple test instances in parallel.
+   -c <options>: Run test under additional background CPU load
+   -D <options>: Run test under additional background load on Secondary storage
+   -m <options>: Run test under additional background load on Main memory
+   -i <options>: Run test under additional background load on IO Bus
+   -n          : Run test with network traffic in background.
+
+9) Linux Test Project Source
+===============================================================================
+Currently LTP version 20200120 is used . But any LTP version can be used .
+
+* Replace the ltp directory in eDDTs directory with the ltp version you will
+  like to use
+* Add device driver test cases support for different platforms in the ltp top level Makefile
+	ifeq ($(BBB),1)
+                COMMON_TARGETS          += ../testsuite/beagleboneevm
+        else ifeq ($(RPI2),1)
+                COMMON_TARGETS          += ../testsuite/rpi2evm
+        endif
+ 
+
+
+10) HELP/SUPPORT
+================================================================================
+   Please submit your queries or comments to 
+	arjun-r@hcl.com
+	titus.dhanasingh@hcl.com
+	sathya-d@hcl.com

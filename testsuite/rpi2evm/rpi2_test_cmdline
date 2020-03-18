@@ -1,0 +1,16 @@
+#Tag       		Test case
+#---------------------------------------
+i2c_test 		rpi2-evm/i2c_test /dev/i2c-1 0x48
+temp_sensor_test 	rpi2-evm/temp_sensor_test /dev/i2c-1 0x48
+audio_playback_test 	rpi2-evm/audio_playback_test aplay /usr/share/sounds/alsa/Front_Center.wav
+speaker_test 		rpi2-evm/speaker_test sine 1
+rtc_test 		rpi2-evm/rtc_test /dev/rtc0
+gpio_test 		rpi2-evm/gpio_test 4 1 5
+gpio_test 		rpi2-evm/gpio_test 24 0 7
+wdt_test 		rpi2-evm/wdt_test /dev/watchdog
+spidev_test 		rpi2-evm/spidev_test /dev/spidev0.0
+dma_test 		rpi2-evm/dma_test /dev/mem 5
+usb_test 		rpi2-evm/usb_test
+cpu_core_test 		rpi2-evm/cpu_core_test
+eth_test		rpi2-evm/eth_test
+#----------------------------------------
