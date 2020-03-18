@@ -56,7 +56,7 @@ Device | Test Case |
 |       | 2.Plays Wave file using alsa utilities
 | ETHERNET | 1.Interface Link |
 |          | 2.IP Address Connectivity |
-           | 3.Speed & duplex test |
+|          | 3.Speed & duplex test |
 |          | 4.Auto negotiate test |
 | GPIO | 1.Test GPIO Output |
 |      | 2.Test GPIO Input |
