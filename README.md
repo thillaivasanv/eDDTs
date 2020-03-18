@@ -58,9 +58,9 @@ The following device test cases are available
 
 Device | Test Case |
 | --- | --- |
-| `DS2321-RTC` | * Read RTC Time |     
-                 * Compare RTC time & system time |
-                 * Checks for Alarms |
+| `DS2321-RTC` | 1.Read RTC Time |     
+               | 2.Compare RTC time & system time |
+               | 3.Checks for Alarms |
 
 # Platform Under Tests Supported #
 
