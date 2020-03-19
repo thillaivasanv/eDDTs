@@ -45,10 +45,10 @@ Driver Category | Device | Part Number | Test Case |
 | ------------- | -------| ----------  | --------- |
 | Memory        | EEPROM | AT243C2 | Verifies Data Integrity by writing and reading to the EEPROM | 
 |               | NOR FLASH | W25Q32 | 1. Performs Erase,Write and Read |
-|                                    | 2. Verifies Data Integrity |
+|               |           |        | 2. Verifies Data Integrity |
 | Timer         | RTC | DS2321 | 1.Read RTC Time |
-|              		       | 2.Compare RTC time & system time |
-|                              | 3.Checks for Alarms |
+|              	|     |	       | 2.Compare RTC time & system time |
+|               |     |        | 3.Checks for Alarms |
 |               | WDT | SoC-WDT | Performs Watchdog timeout configuration & watchdog Refresh |
 
 
