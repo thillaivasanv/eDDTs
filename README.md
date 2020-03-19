@@ -49,7 +49,25 @@ Driver Category | Device | Part Number | Test Case |
 | Timer         | RTC | DS2321 | 1.Read RTC Time |
 |              	|     |	       | 2.Compare RTC time & system time |
 |               |     |        | 3.Checks for Alarms |
-|               | WDT | SoC-WDT | Performs Watchdog timeout configuration & watchdog Refresh |
+|               | WDT | SoC | Performs Watchdog timeout configuration & watchdog Refresh |
+| Network       | Ethernet | SoC | 1.Interface Link |
+|          	|          |     | 2.IP Address Connectivity |
+|          	|          |     | 3.Speed & duplex test |
+|          	|          |     | 4.Auto negotiate test |
+| Sensors       | Temperature Sensor | TMP101 | Read Temperature value |
+| Input/Output  | GPIO | SoC | 1.Test GPIO Output |
+|      		|      |     | 2.Test GPIO Input |
+| USB		| USB Device | SoC | Checks USB Device Connectivity | 
+| Data Transfer | DMA |SoC | Performs memory-to-memory transfer test using a DMA Channel |
+| Serial        | I2C | SoC | Scans I2C Bus for connected slaves |
+|               | SPI | SoC | Verifies SoC SPI interface by loopback transmit & recieve |
+| Audio         | | PWM | 1.Plays Sine tone using also utilities
+|       	| |     | 2.Plays Wave file using alsa utilities
+
+
+
+
+
 
 
 
