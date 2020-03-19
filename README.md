@@ -127,9 +127,10 @@ eDDTs has been used on following platforms or evaluation Boards:
 
 ================================================================
 
-Clone the project
+Clone the project at
 	https://github.com/arjunTest3330/eDDTs.git
-	Detailed Build & Installation instructions are in the README-eDDTs file
+
+Detailed Build & Installation instructions are in the README-eDDTs file
 	
 # Running Tests #
 
@@ -160,4 +161,5 @@ test cases
 =================================================================
 
 The test suite follows Linux Test Project Licensing (GPL2 or later).
+
 Refer LICENSE for further details
