@@ -1,0 +1,39 @@
+eDDTs TODO
+----------
+
+cpu_core_test
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The curent cpu core test only finds the number of cpu
+cores available, instead a more expanded test would be 
+verify each core using proc/sys interface
+
+sensors
+~~~~~~~~~~~~~~~~~~~~~~~
+There is not much sensor device driver test case available
+apart from a temperature sensor. With IOT evolving in market,
+test cases related to different kinds of sensors will help
+for different projects
+
+networking
+~~~~~~~~~~~~~~~~~~~~~~
+Test cases related to wireless networking including wi-fi &
+bluetooth shall be added
+
+Display
+~~~~~~~~~~~~~~~~~~~~~
+Display devices and touchscreen test cases should also be 
+added
+
+Common test case layer
+~~~~~~~~~~~~~~~~~~~~~~
+Currently some test cases are duplicated in each platforms
+.It would be more ideal , if a common test case layer can be created
+to support multiple platforms .
+
+User Interface
+~~~~~~~~~~~~~~~~~~~~~
+The test suite now assumes the device under test will have a serial console
+interface to execute the test cases. A minimal GUI with test execution , reporting
+and supporting different interface would be a better way to execute the testing 
+

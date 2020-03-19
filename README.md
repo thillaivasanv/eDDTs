@@ -1,3 +1,30 @@
+# eDDTs Objective # (Embedded Device Driver Test Suite)
+
+=================================================================
+
+eDDTs is a test suite specifically designed for embedded Linux
+device driver testing.
+
+There are numerous aspects of testing that are still done in an ad-hoc and
+company-specific way. Although there are open source test programs
+(such as cylictest, LTP, linuxbench, etc.), there are lots of aspects of
+Linux testing that are not shared and once such is device drivers testing
+
+The purpose of eDDTs is to provide a test suite for testing device drivers for
+multiple platforms covering different device technologies (e.g memory,sensors,
+networking etc.)in  embedded Linux, that is distributed and allows individuals
+and organizations to easily run the available test cases , create and run their
+own tests,and at the same time allows people to share their tests and test results
+with each other.
+
+Below are some of the key objectives and milestones listed
+
+* Support for multiple platforms
+* Covering device test cases of different technologies (e.g memory,sensors,networking etc.)
+* User Interface to execute test
+* Test cases reusability across platforms
+
+
 # eDDTs Overview (Embedded Device Driver Test Suite) #
 
 ================================================================
@@ -26,7 +53,7 @@ The main additions or 'enhacements' of eDDTs compared to LTP are
 * Several device drivers test cases like RTC,DMA,AUDIO,GPIO,ETHERNET,FLASH memories,eMMC
 * Support for different SoCs and chipsets
 * All eDDTs test cases and test code reside in eDDT/testsuite/<platform-name-evm>/.
- 
+
 # eDDTs Benefits #
 
 ================================================================
@@ -39,7 +66,8 @@ The main additions or 'enhacements' of eDDTs compared to LTP are
 
 ================================================================
 
-The following device test cases are available 
+The following device test cases for a specified part numbers are available . 
+SoC represents the test for system on Chip interfaces like SPI,I2C,CPU cores etc.  
 
 Driver Category | Device | Part Number | Test Case |
 | ------------- | -------| ----------  | --------- |
@@ -63,39 +91,7 @@ Driver Category | Device | Part Number | Test Case |
 |               | SPI | SoC | Verifies SoC SPI interface by loopback transmit & recieve |
 | Audio         | | PWM | 1.Plays Sine tone using also utilities
 |       	| |     | 2.Plays Wave file using alsa utilities
-
-
-
-
-
-
-
-
-
-
-Device | Test Case |
-| --- | --- |
-| DS2321-RTC   | 1.Read RTC Time |     
-|              | 2.Compare RTC time & system time |
-|              | 3.Checks for Alarms |
-| TMP101-TEMP SENSOR | Read Temperature value |
-| I2C PROBE | Scans I2C Bus for connected slaves |
-| AT243C2-EEPROM | Verifies Data Integrity by writing and reading to the EEPROM |
-| W25Q32-SERIAL FLASH | 1. Performs Erase,Write and Read
-|                     | 2. Verifies Data Integrity
-| SPI | Verifies SoC SPI interface by loopback transmit & recieve |
-| AUDIO | 1.Plays Sine tone using also utilities
-|       | 2.Plays Wave file using alsa utilities
-| ETHERNET | 1.Interface Link |
-|          | 2.IP Address Connectivity |
-|          | 3.Speed & duplex test |
-|          | 4.Auto negotiate test |
-| GPIO | 1.Test GPIO Output |
-|      | 2.Test GPIO Input |
-| USB  | Checks whether a USB device connectivity |
-| CPU Core | Checks available number of cores present in SoC |
-| DMA | Performs memory-to-memory transfer test using a DMA Channel |
-| Watchdog | Performs SoC Watchdog timeout configuration & watchdog Refresh |
+| Cores         |CPU Cores | SoC | Determines the number of CPU cores present in the SoC |
 
 # Platform Under Tests Supported #
 
@@ -156,3 +152,12 @@ The runltp script have lot of options. Some useful ones for stress tests are:
 
 Please refer to README-eDDTs file for more details.
 
+The testsuite assumes a serial console is available for executing the 
+test cases
+
+# LICENSE #
+
+=================================================================
+
+The test suite follows Linux Test Project Licensing (GPL2 or later).
+Refer LICENSE for further details
