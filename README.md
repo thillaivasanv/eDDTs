@@ -41,6 +41,15 @@ The main additions or 'enhacements' of eDDTs compared to LTP are
 
 The following device test cases are available 
 
+Driver Category | Device | Part Number | Test Case |
+| ------------- | -------| ----------  | --------- |
+| Memory | EEPROM | AT243C2 | Verifies Data Integrity by writing and reading to the EEPROM | 
+|        | NOR FLASH | W25Q32 | 1. Performs Erase,Write and Read |
+|                             | 2. Verifies Data Integrity |
+
+
+
+
 Device | Test Case |
 | --- | --- |
 | DS2321-RTC   | 1.Read RTC Time |     
