@@ -162,4 +162,4 @@ test cases
 
 The test suite follows Linux Test Project Licensing (GPL2 or later).
 
-Refer LICENSE for further details
+Refer LICENSE Document for further details
