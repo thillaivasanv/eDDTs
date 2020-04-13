@@ -29,7 +29,7 @@ Below are some of the key objectives and milestones listed
 
 ================================================================
 
-eDDTs is a test framework to test and validate various device drivers 
+eDDTs is a test framework to test and validate various device drivers ------
 based on embedded linux.
 
 It is based on LTP (Linux Test Project)
